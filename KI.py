@@ -292,13 +292,11 @@ def itemExists(item, arr):
             return True
     return False
 
-
 def delItemInList(item, arr):
     tmp=[]
     for item2 in arr:
         if not item2==item:
             tmp.append(item2)
-
 
 def clearArr(arr):
     arr2 = []
@@ -345,7 +343,7 @@ def main():
         x = os.listdir("objects\\")
         for item in x:
             print(item)
-    elif inp[0]=="addAdj":
+    elif inp[0]=="addAttr":
         x = addAttr(inp[1], "a", inp[2])
         if not x:
             print("something went wrong")
@@ -390,8 +388,7 @@ def firstStart():
         os.makedirs("objects\\")
     
     print("Create Object: 'createObj [obj]'")
-    print("Add Adjective: 'addAdj [obj] <attribute>'")
-    print("Add Relation: 'addRelation [obj1] <obj2>'")
+    print("Add Adjective: 'addAttr [obj] <attribute>'")
     print("Print Object: 'printObj [obj]'")
     print("Delete Object: 'delObj [obj]'")
     print("Delete Attribute: 'delAttr [obj] <attribute>'")
@@ -399,6 +396,6 @@ def firstStart():
     print("Set Object: 'setObj <obj>'")
     print("Automatically Filter new Data: 'addFromText'")
     print("List all Objects: 'listObjs'")
-    print("Take Data out of input.txt: 'useTXT'")
+    print("Take Data out of a file: 'useTXT [filename]'")
     main();
 firstStart()
