@@ -5,11 +5,11 @@ def createObj(filename):
         file = open(filepath, "w+")
         file.write("")
         file.close()
-        print("successfully created Object '"+filename+"'")
+        g_print("successfully created Object '"+filename+"'", "Object created!")
         return True
 
     else:
-        print("File already exists")
+        g_print("File already exists", "Error. (createObj)")
         return False
 
 def addAttr(filename, count, attr):
@@ -36,7 +36,7 @@ def printObj(filename):
         file.close()
         return True
     else:
-        print("File '"+filename+"' not found.")
+        g_print("File '"+filename+"' not found.", "Error. (printObj)")
         return False
 
 def delObj(filename):
@@ -44,10 +44,10 @@ def delObj(filename):
     filepath="objects\\"+filename+".txt"
     if os.path.isfile(filepath):
         os.remove(filepath)
-        print("successfully removed Object '"+filename+"'")
+        g_print("successfully removed Object '"+filename+"'", "deleted Object!")
         return True
     else:
-        print("File '"+filename+"' not found.")
+        g_print("File '"+filename+"' not found.", "Error. (delObj)")
         return False
 
 def delAttr(filename, attr):
@@ -71,5 +71,5 @@ def delAttr(filename, attr):
         file.close()
         return True
     else:
-        print("File '"+filename+"' not found.")
+        g_print("File '"+filename+"' not found.", "Error. (delAttr)")
         return False

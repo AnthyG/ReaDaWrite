@@ -91,7 +91,7 @@ def blacklistFilter(arr):
                 else:
                     print("found ~'"+item+"' in Blacklist, ignoring it")
     else:
-        print("blacklist not found, creating it, proceeding without.")
+        g_print("blacklist not found, creating it, proceeding without.", "Error. (blacklistFilter)")
         file = open("blacklist.txt", "w+")
         file.write("")
         file.close()

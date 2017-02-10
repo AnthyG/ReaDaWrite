@@ -16,7 +16,7 @@ def clearObj(filename):
         file.close()
         return True
     else:
-        print("File '"+filename+"' not found.")
+        g_print("File '"+filename+"' not found.", "Error. (clearObj)")
         return False
 
 def clearObjs():

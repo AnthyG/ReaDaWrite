@@ -1,7 +1,9 @@
-import os,sys,time,easygui
+import os,sys,time
+import easygui as eg
 
-global lastObj
+global lastObj, usegui
 lastObj = ""
+usegui = False
 
 #Modules:
 #Utils
