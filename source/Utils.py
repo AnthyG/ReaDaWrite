@@ -15,11 +15,13 @@ def itemExists(item, arr):
             return True
     return False
 
+
 def delItemInList(item, arr):
     tmp=[]
     for item2 in arr:
         if not item2==item:
             tmp.append(item2)
+
 
 def clearArr(arr):
     arr2 = []
