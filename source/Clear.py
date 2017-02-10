@@ -9,8 +9,10 @@ def clearObj(filename):
         arr=clearArr(arr)
         arr=reformat(arr)
         file = open(filepath, "w")
-        for item in arr:
-            file.write(item+"\n")
+        for itemX, item in enumerate(arr):
+            if itemX < len(arr) - 1:
+                item += "\n"
+            file.write(item)
         file.close()
         return True
     else:
