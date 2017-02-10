@@ -55,16 +55,18 @@ def main():
             dataFromTXT(inp[1])
         else:
             dataFromTXT()
+    
+    elif inp[0] == "help":
+        helpPrint()
+    
     elif inp[0] == "exit":
         sys.exit()
         
     clearObjs()
     main()
 
-def firstStart():
-    if not os.path.exists("objects\\"):
-        os.makedirs("objects\\")
-    
+def helpPrint():
+    print("Prints this: 'help'")
     print("List all Objects: 'listObjs'")
     print("Create Object: 'createObj [obj]'")
     print("Print Object: 'printObj [obj]'")
@@ -76,6 +78,13 @@ def firstStart():
     print("Set Object: 'setObj <obj>'")
     print("Sets [obj] to default to <obj>")
     print("Exit the program: 'exit'")
+
+def firstStart():
+    if not os.path.exists("objects\\"):
+        os.makedirs("objects\\")
+        
+    helpPrint()
+    
     main();
     
 firstStart()
