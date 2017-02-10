@@ -75,5 +75,7 @@ def firstStart():
     print("Take Data out of a file: 'useTXT [filename]'")
     print("Set Object: 'setObj <obj>'")
     print("Sets [obj] to default to <obj>")
+    print("Exit the program: 'exit'")
     main();
+    
 firstStart()
