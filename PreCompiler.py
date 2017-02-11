@@ -14,7 +14,7 @@ def rFile(fileP):
 def addIt(file, fileR):
     global output
     print("Adding " + file)
-    output += "\n\n#---\n#" + file + "\n#---\n\n" + fileR
+    output += "\n\n# " + "-"*len(file) + " #\n# " + file + " #\n# " + "-"*len(file) + " #\n\n" + fileR
 
 #Import MainTop.py as first Module
 addIt("MainTop.py", rFile(sourcedir+"MainTop.py"))
