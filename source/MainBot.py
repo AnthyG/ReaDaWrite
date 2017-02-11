@@ -81,21 +81,26 @@ def main():
 def helpPrint():
     helpstring = """
 Prints this: 'help'
+
 List all Objects: 'listObjs'
 Create Object: 'createObj [obj]'
 Print Object: 'printObj [obj]'
 Delete Object: 'delObj [obj]'
+
 Add Adjective: 'addAttr [obj] <attribute>'
 Delete Attribute: 'delAttr [obj] <attribute>'
+
 Automatically Filter new Data: 'addFromText'
 Take Data out of a file: 'useTXT [filename]'
+
 Set Object: 'setObj <obj>'
 Sets [obj] to default to <obj>
 Exit the program: 'exit'"""
     print(helpstring)
     
     if usegui:
-        choice = eg.choicebox("Available commands", "Help", clearArr(helpstring.split("\n")))
+        eg.msgbox(helpstring, "Help")
+#        choice = eg.choicebox("Available commands", "Help", clearArr(helpstring.split("\n")))
 
 def firstStart():
     if not os.path.exists("objects\\"):
