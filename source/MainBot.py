@@ -11,10 +11,15 @@
 ##        print("File '"+filename+"' not found.")
 ##    return arr
 
-def main():
+def main(inp=[]):
     global lastObj, usegui
     try:
-        inp = clearArr(g_input("Your CMD > ", "Input").split(" "))
+        inp = inp or g_input("Your CMD > ", "Input").split(" ")
+        if type(inp) == list:
+            inp = clearArr(inp)
+        elif type(inp) == str:
+            inp = clearArr(inp.split(" "))
+#        inp = clearArr(input("Your CMD > ", "Input").split(" "))
         
         if not lastObj=="":
             inp.insert(1, lastObj)
@@ -79,6 +84,25 @@ def main():
     main()
 
 def helpPrint():
+    helparrT = [
+        "Prints this: 'help'",
+        "List all Objects: 'listObjs'",
+        "Create Object: 'createObj [obj]'",
+        "Print Object: 'printObj [obj]'",
+        "Delete Object: 'delObj [obj]'",
+        "Add Adjective: 'addAttr [obj] <attribute>'",
+        "Delete Attribute: 'delAttr [obj] <attribute>'",
+        "Automatically Filter new Data: 'addFromText'",
+        "Take Data out of a file: 'useTXT [filename]'",
+        "Set Object: 'setObj <obj>'",
+        "Sets [obj] to default to <obj>",
+        "Exit the program: 'exit'"
+    ]
+    helparrA = [
+        "helpPrint()",
+        "main('listObjs')"
+        "main(['createObj', g_input('Object > ', 'Object name')])"
+    ]
     helpstring = """
 Prints this: 'help'
 
@@ -99,8 +123,8 @@ Exit the program: 'exit'"""
     print(helpstring)
     
     if usegui:
-        eg.msgbox(helpstring, "Help")
-#        choice = eg.choicebox("Available commands", "Help", clearArr(helpstring.split("\n")))
+#        eg.msgbox(helpstring, "Help")
+        choice = eg.choicebox("Available commands", "Help", clearArr(helparr))
 
 def firstStart():
     if not os.path.exists("objects\\"):

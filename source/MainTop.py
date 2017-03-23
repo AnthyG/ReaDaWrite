@@ -1,4 +1,4 @@
-import os,sys,time
+import os, sys, time, json
 import easygui as eg
 
 global lastObj, usegui
